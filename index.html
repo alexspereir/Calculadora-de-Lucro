@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>Calculadora de Lucro de Venda</title>
+    </head>
+
+    <body>
+        <div class="container flex-column">
+            <div class="titulo flex-column">
+                <h1>Calculadora de Lucro de Venda</h1>
+                <p>
+                    Com essa calculora você poderá lançar o valor de custo do seu produto e o lucro
+                    que pretende ganhar em cima do valor total da venda.
+                </p>
+            </div>
+            <div class="calculadora flex-column">
+                <div class="caixa-calculo flex-row">
+                    <input type="text" class="caixa-texto fonte-calculadora" id="custo" onclick="mudaEstilo('custo')" onblur="numberToReal()" placeholder="Custo do produto (R$):">
+                    <input type="text" class="caixa-texto fonte-calculadora" id="taxa"  onclick="mudaEstilo('taxa')" onblur="numberToPercentage()" placeholder="Taxa de Lucro (%):">
+                </div>
+                <div class="botoes flex-row">                  
+                    <button class="botao fonte-calculadora" onclick="calcular()">Calcular o Lucro</button>
+                    <button class="botao fonte-calculadora" onclick="limparCampos()">Limpar</button>
+                </div>
+            </div>
+            <div class="tabela">
+                <table>
+                    <tr>
+                        <th colspan="2">
+                            Resultados da Calculadora
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            Preço de Venda
+                        </th>
+                        <th>
+                            Lucro Sobre a Venda
+                        </th>
+                    </tr>
+                    <tr>
+                        <td id="preco-venda">
+                            R$ 0,00
+                        </td>
+                        <td id="lucro-venda">
+                            0 %
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+
+        <script src="logica.js"></script>
+    </body>
+</html>
